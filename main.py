@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, Blueprint
+from flask import Flask, render_template, request, jsonify
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize, sent_tokenize
@@ -17,14 +17,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def root():
-    # For the sake of example, use static information to inflate the template.
-    # This will be replaced with real information in later steps.
-    dummy_times = [datetime.datetime(2018, 1, 1, 10, 0, 0),
-                   datetime.datetime(2018, 1, 2, 10, 30, 0),
-                   datetime.datetime(2018, 1, 3, 11, 0, 0),
-                   ]
-
-    return render_template('index.html', times=dummy_times)
+    return render_template('index.html')
 
 @app.route('/<string:input>/')
 def hello(input):
@@ -99,7 +92,10 @@ def hello(input):
     output = output.replace("! bloody","! Bloody")
     output = output.replace("is n\'t","isn\'t")
     output = output.replace("was n\'t","wasn\'t")
-    return output
+    return jsonify(
+        original=input,
+        bloodied=output,
+    )
 
 
 if __name__ == '__main__':
