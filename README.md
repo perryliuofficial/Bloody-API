@@ -5,6 +5,9 @@ Want to spice up your sentences by inserting "bloody" in an appropriate manner? 
 
 > If you're visiting this bloody page, you're likely here because you're searching for a random bloody sentence.
 
+## Usage
+Consider using [encodeURIComponent()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent) to encode the query.
+
 ## Why?
 Something something *portfolio* something something *please hire me*.
 
