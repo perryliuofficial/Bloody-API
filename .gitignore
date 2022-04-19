@@ -1,3 +1,7 @@
+templates/nltk/
+templates/nltk-3.7.dist-info/
+nltk_data/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
