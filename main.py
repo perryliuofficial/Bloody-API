@@ -1,17 +1,11 @@
 import os
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, jsonify
 import nltk
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.tokenize import sent_tokenize
 
 root = os.path.dirname(os.path.abspath(__file__))
 download_dir = os.path.join(root, 'nltk_data')
-# os.chdir(download_dir)
 nltk.data.path.append(download_dir)
-
-
-
-import datetime
 
 app = Flask(__name__)
 
@@ -76,13 +70,11 @@ def hello(input):
 
     for i in tagged:
         for j in i:
-            # print(j)
             if any(map(j.__contains__,criteriaList)):
                 output += "bloody" + " "
                 output += j[0] + " "
             else:output += j[0] + " "
 
-    # print(output)
     output = output.replace(" .",".")
     output = output.replace(" ,",",")
     output = output.replace(" !","!")
