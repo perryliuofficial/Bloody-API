@@ -1,3 +1,6 @@
+# ⚠️API IS NOW OFFLINE⚠️
+GCP Container Registry will be phased out starting May 2024, so I've made the decision to shut down the API now in May 2023.
+
 # Bloody API
 Want to spice up your sentences by inserting "bloody" in an appropriate manner? This is the perfect API for you!
 
